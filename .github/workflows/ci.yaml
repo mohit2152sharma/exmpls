@@ -27,16 +27,9 @@ jobs:
           dir_names_exclude_current_dir: true
           dir_names_max_depth: 1
           files_ignore: |
+            .github/workflows/ci.yaml
             create_readme.py
 
-  test_output:
-    name: print output
-    needs: changed_files
-    runs-on: ubuntu-latest
-    steps:
-      - name: print changed files name
-        run: |
-          echo ${{ needs.changed_files.outputs.changed-files }}
   update_readme:
     name: Update Readme
     needs: changed_files
