@@ -3,7 +3,6 @@
 - `while` loop syntax:
 
 ```bash
-
 while [condition]; do
     [commands]
 done;
