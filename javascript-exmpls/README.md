@@ -1,4 +1,4 @@
-# Bash Examples
+# Javascript Examples
 
 
 <details>
@@ -148,9 +148,9 @@ let bytes = 0b1000_0000;
   // when result is close to zero from a negative number, returns -zero
   1e-1000; // returns -0
 
-// Division by zero is not an error, It returns Infinity or -Infinity
-1 / 0 - // returns Infinity
-  1 / 0; // returns -Infinity
+// Division by zero is not an error, returns Infinity or -Infinity
+1 / 0; // returns Infinity
+-1 / 0; // returns -Infinity
 
 // Zero divided by zero returns NaN
 0 / 0; // returns NaN
