@@ -31,4 +31,4 @@ done
 ```
 
 - Using `while` loop with pipe operator
-  - In the statement `lhs | rhs`, the `rhs` statement runs in a separate subshell. The variables created or updated in the `rhs` statement do not propogate to the parent process.
+  - In the statement `lhs | rhs`, the `rhs` statement runs in a separate subshell. The variables created or updated in the `rhs` statement do not propagate to the parent process.

@@ -25,8 +25,8 @@ let bytes = 0b1000_0000;
   1e-1000; // returns -0
 
 // Division by zero is not an error, It returns Infinity or -Infinity
-1 / 0 - // returns Infinity
-  1 / 0; // returns -Infinity
+1 / 0; // returns Infinity
+-1 / 0; // returns -Infinity
 
 // Zero divided by zero returns NaN
 0 / 0; // returns NaN

@@ -1,10 +1,12 @@
 import os
+import sys
 
 
-def get_md_files():
+def get_md_files(dir: str):
+    file_dir = os.path.join(dir, "notes")
     return [
-        os.path.join("notes", f)
-        for f in os.listdir("./notes")
+        os.path.join(file_dir, f)
+        for f in os.listdir(file_dir)
         if f.endswith(".md") and not f.startswith("README")
     ]
 
@@ -20,19 +22,21 @@ def create_content(files):
     return cntnt
 
 
-def create_readme(cntnt):
-    lang = os.path.basename(os.getcwd()).split("-")[0].title()
+def create_readme(cntnt, project_dir: str):
+    lang = project_dir.split("-")[0].title()
     sting = f"# {lang} Examples\n"
     for h, t in cntnt:
         sting += f"\n\n<details>\n\n<summary>{h}</summary>\n\n{t}\n\n</details>"
 
-    with open("README.md", "w") as f:
+    readme_file = os.path.join(project_dir, "README.md")
+    with open(readme_file, "w") as f:
         f.write(sting)
-    print("successfully written to README.md")
+    print(f"successfully written to {readme_file}")
 
 
 if __name__ == "__main__":
-    files = get_md_files()
+    project_dir = sys.argv[-1]
+    files = get_md_files(project_dir)
     print(f"{files=}")
     cntnt = create_content(files)
-    create_readme(cntnt)
+    create_readme(cntnt, project_dir)
